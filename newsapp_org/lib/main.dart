@@ -39,13 +39,11 @@ class _HomePageState extends State<HomePage> {
             List<Article> articles = snapshot.data;
             return ListView.builder(
               itemCount: articles.length,
-              itemBuilder: (context, index) {
-                ListTile(
-                  title: Text(articles[index].title),
-                );
-              },
+              itemBuilder: (context, index) =>
+                  customListTile(articles[index], context),
             );
           }
+
           return Center(
             child: CircularProgressIndicator(),
           );
